@@ -10,7 +10,7 @@ while (answer == 'yes') {
     let command = rl.question("Enter the command: ");
 
     switch (command) {
-        case "Create":
+        case '1':
             fileName = rl.question("Enter name and extension of file: ");
             if (!fs.existsSync("files/" + fileName)) {
                 fs.openSync("files/" + fileName, 'w');
@@ -20,7 +20,7 @@ while (answer == 'yes') {
             }
             break;
 
-        case "Read":
+        case '2':
             fileName = rl.question("Enter file name: ");
             if (fs.existsSync("files/" + fileName)) {
                 console.log(fs.readFileSync("files/" + fileName, 'utf-8'));
@@ -29,11 +29,18 @@ while (answer == 'yes') {
             }
             break;
 
-        case "Update":
+        case '3':
+            fileName = rl.question("Enter file name: ");
+            if (fs.existsSync("files/" + fileName)) {
+                let str = rl.question("Enter data to push it in file: ");
+                fs.appendFileSync("files/" + fileName, `${str}\n`);
+                console.log("File is updated");
+            } else {
+                console.log("File is not found.");
+            }
+            break;  
 
-
-
-        case "Delete":
+        case '4':
             fileName = rl.question("Enter file name, what you want to delete: ");
             if (fs.existsSync("files/" + fileName)) {
                 fs.unlinkSync("files/" + fileName);
@@ -48,5 +55,5 @@ while (answer == 'yes') {
             break;          
     }
 
-    answer = rl.question("Want to continue? ");
+    answer = rl.question("Want to continue? (yes/no)");
 }
