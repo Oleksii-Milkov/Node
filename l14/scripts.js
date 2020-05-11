@@ -27,11 +27,21 @@ http.createServer(function (req, res) {
 
 //3-e задание ====================================================================
 
-const request = require('request');
+/* const request = require('request');
 
 request("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3", function (err, res, body) {
     if (err) throw error;
     console.log(JSON.parse(body));
-});
+}); */
 
 //4-e задание ====================================================================
+
+const req = new XMLHttpRequest();
+
+req.open('GET', "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3");
+
+req.onload = function () {
+    document.body.append(req.response);
+}
+
+req.send();
