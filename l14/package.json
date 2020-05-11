@@ -1,0 +1,20 @@
+{
+  "name": "l14",
+  "version": "1.0.0",
+  "description": "testing",
+  "main": "scripts.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oleksii-Milkov/Node.git"
+  },
+  "author": "Oleksii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oleksii-Milkov/Node/issues"
+  },
+  "homepage": "https://github.com/Oleksii-Milkov/Node#readme",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
