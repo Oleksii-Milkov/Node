@@ -47,6 +47,28 @@ app.post("/api/courses", function (req, res) {
     res.send(courses);
 });
 
+//Put 
+app.put("/api/courses/:id", function (req, res) {
+    const course = courses.find(function (course) {
+        return course.id === parseInt(req.params.id);
+    });
+
+    course.name = req.body.name;
+    res.send(course);
+
+    //если нужен статус вместо данных
+    //res.sendStatus(200);
+});
+
+//Delete
+app.delete("/api/courses/:id", function (req, res) {
+    courses = courses.filter(function (course) {
+        return course.id !== parseInt(req.params.id);
+    });
+
+    res.send(courses);
+});
+
 app.listen(port, function () {
     console.log(`Express at http://localhost:${port}`);
 });
