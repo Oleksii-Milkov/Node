@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title= title
+        link(rel='stylesheet' href='/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/stylesheet/css/main.css')
+    body
+        ul.nav.justify-content-center.nav-fill.d-flex.align-items-center
+            li.nav-item
+                a.nav-link.active(href="/") Главная
+            li.nav-item
+                a.nav-link(href="/aboutUs") О нас
+            li.nav-item
+                a.nav-link(href="/contacts") Контакты
+        div.container.shadow.rounded
+            block content
+

@@ -1,0 +1,35 @@
+.container {
+  background-color: #ececec;
+  border: 1px solid #e7e7e7;
+  padding: 2em;
+}
+
+.nav {
+  background-color: #42a5f5;
+}
+
+.nav .nav-item .nav-link {
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.nav .nav-item .nav-link:hover {
+  color: black;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.container {
+  margin-top: 2em;
+}
+
+.nav {
+  padding: .5em;
+}
+
+body {
+  background-color: white;
+}

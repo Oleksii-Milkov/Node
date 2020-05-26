@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1 Контакты
+    p.mt-4 Здесь вы можете заполнить форму, и через некоторое время мы обязательно свяжемся с вами!
+    form(action="/contacts", method="post")
+        div.form-group  
+            label(for='name') Имя:
+            input#name.form-control(type='text', placeholder='Введите ваше имя' name='name')
+        div.form-group
+            label(for='email') Электронная почта:
+            input#email.form-control(type='email', placeholder='Введите вашу электронную почту' name='email')
+        div.form-group
+            label(for='phone') Номер телефона:
+            input#phone.form-control(type='number', placeholder='Введите ваш номер телефона' name='phone')
+        block message
+            if message!=null
+                if message==true
+                    div.alert.alert-success
+                        p Сообщение отправлено
+                else
+                    div.alert.alert-danger
+                        p Поля не заполнены                    
+        button.btn.btn-primary(type='submit') Отправить
